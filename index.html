@@ -1,112 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot Educacional - Diabetes Tipo 1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letramento em Diabetes Tipo 1</title>
 
   <style>
-    body {
+    /* ===== RESET ===== */
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 95vh;
+      background: url("https://images.unsplash.com/photo-1556745770-1a94a0f46c38?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.40);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #00aaff;
+      color: white;
+      padding: 14px 26px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #0088d6;
+    }
+
+    /* ===== SEÇÃO ===== */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    section p {
+      font-size: 1.15rem;
+      max-width: 750px;
+      margin: 0 auto 40px;
+      color: #555;
+    }
+
+    /* ===== BLOCO DESTAQUE ===== */
+    .box {
+      background: white;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .box h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
       color: #333;
     }
 
-    header {
-      background: #4e73df;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .box p {
+      font-size: 1.1rem;
+      color: #666;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #4e73df;
-    }
-
-    .warning {
-      padding: 15px;
-      border-left: 4px solid #e74a3b;
-      background: #fcebea;
-      color: #921b12;
-      margin-bottom: 20px;
-      border-radius: 6px;
-    }
-
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      background: #eee;
-      font-size: 14px;
-    }
-
-    .chatbox-info {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-      color: #555;
+      padding: 40px;
+      background: #f0f0f0;
+      margin-top: 50px;
+      font-size: 0.95rem;
+      color: #777;
     }
 
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Chatbot Educacional – Diabetes Tipo 1</h1>
-</header>
-
-<div class="container">
-  <h2>Bem-vindo!</h2>
-  <p>
-    Este chatbot foi criado para ajudar adolescentes com diabetes tipo 1 a entenderem melhor alguns conceitos importantes sobre sua condição, de forma simples, segura e educativa.
-  </p>
-
-  <div class="warning">
-    <strong>Aviso:</strong> Este chatbot <strong>não</strong> oferece recomendações médicas, diagnósticos, ajustes de insulina, dosagens ou condutas clínicas.  
-    Para qualquer dúvida médica, procure sua equipe de saúde ou responsável.
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Chat de Apoio ao Letramento em Diabetes Tipo 1</h1>
+      <p>Um espaço seguro, informativo e pensado para adolescentes que convivem com o Diabetes Tipo 1.</p>
+      <a href="#sobre" class="btn">Saiba Mais</a>
+    </div>
   </div>
 
-  <p>
-    Clique no ícone de chat no canto inferior direito para começar a conversar.
-  </p>
+  <!-- SOBRE -->
+  <section id="sobre">
+    <h2>📘 Sobre o Projeto</h2>
+    <p>
+      Este projeto tem como objetivo ajudar adolescentes com Diabetes Tipo 1 a compreender melhor sua condição,
+      desenvolver autonomia e navegar pelo dia a dia com segurança e clareza — tudo através de um chatbot educativo.
+    </p>
 
-  <div class="chatbox-info">
-    Se o chatbot não aparecer, verifique se o bloqueador de scripts está desativado.
-  </div>
-</div>
+    <div class="box">
+      <h3>❗ O que o chatbot NÃO faz</h3>
+      <p>Não fornece diagnóstico, tratamento, ajuste de insulina ou recomendações médicas.  
+      Tudo é filtrado e limitado para evitar riscos e garantir segurança.</p>
+    </div>
 
-<footer>
-  © 2025 – Projeto de Letramento em Diabetes Tipo 1
-</footer>
+    <div class="box">
+      <h3>💙 O que ele faz</h3>
+      <p>Oferece explicações simples, educativas e confiáveis sobre conceitos importantes do Diabetes Tipo 1,
+         incluindo rotinas, termos médicos, mitos comuns e boas práticas de autocuidado.</p>
+    </div>
+  </section>
 
-<!-- BOTPRESS CHAT INJECT -->
-<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script>
-  window.botpressWebChat.init({
-    botId: "SEU_BOT_ID_AQUI",
-    clientId: "SEU_CLIENT_ID_AQUI",
-    botName: "Chat Diabetes T1",
-    hideWidget: false,
-    disableAnimations: false,
-  });
-</script>
+  <!-- COMO FUNCIONA -->
+  <section id="funciona">
+    <h2>⚙️ Como Funciona</h2>
+    <p>
+      Utilizamos inteligência artificial com regras rígidas para garantir que nenhuma informação sensível 
+      de saúde seja gerada. O chatbot responde apenas dentro de limites seguros e educativos.
+    </p>
+
+    <div class="box">
+      <h3>🔒 Filtragem de perguntas</h3>
+      <p>Perguntas sobre dosagens, valores de glicemia, remédios, insulina ou emergências são bloqueadas.</p>
+    </div>
+
+    <div class="box">
+      <h3>🤖 IA treinada com segurança</h3>
+      <p>A IA é treinada com foco em educação, não em orientação médica.  
+      Isso garante que o adolescente receba apenas informações confiáveis e apropriadas.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 — Projeto de Letramento em Diabetes Tipo 1.  
+    <br>Desenvolvido com cuidado, ética e responsabilidade.
+  </footer>
 
 </body>
 </html>
