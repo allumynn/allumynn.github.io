@@ -1,21 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chatbot Educacional - Diabetes Tipo 1</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: #4e73df;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #4e73df;
+    }
+
+    .warning {
+      padding: 15px;
+      border-left: 4px solid #e74a3b;
+      background: #fcebea;
+      color: #921b12;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: #eee;
+      font-size: 14px;
+    }
+
+    .chatbox-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+  </style>
 </head>
 <body>
-  <h1>Chatbot Educacional: Diabetes Tipo 1</h1>
-  <p>Este chatbot é apenas educacional e não substitui orientação profissional.</p>
 
-  <!-- Botpress -->
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script>
-    window.botpressWebChat.init({
-      botId: "SEU_BOT_ID",
-      clientId: "SEU_CLIENT_ID",
-      botName: "Chat Diabetes T1",
-    });
-  </script>
+<header>
+  <h1>Chatbot Educacional – Diabetes Tipo 1</h1>
+</header>
+
+<div class="container">
+  <h2>Bem-vindo!</h2>
+  <p>
+    Este chatbot foi criado para ajudar adolescentes com diabetes tipo 1 a entenderem melhor alguns conceitos importantes sobre sua condição, de forma simples, segura e educativa.
+  </p>
+
+  <div class="warning">
+    <strong>Aviso:</strong> Este chatbot <strong>não</strong> oferece recomendações médicas, diagnósticos, ajustes de insulina, dosagens ou condutas clínicas.  
+    Para qualquer dúvida médica, procure sua equipe de saúde ou responsável.
+  </div>
+
+  <p>
+    Clique no ícone de chat no canto inferior direito para começar a conversar.
+  </p>
+
+  <div class="chatbox-info">
+    Se o chatbot não aparecer, verifique se o bloqueador de scripts está desativado.
+  </div>
+</div>
+
+<footer>
+  © 2025 – Projeto de Letramento em Diabetes Tipo 1
+</footer>
+
+<!-- BOTPRESS CHAT INJECT -->
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+    botId: "SEU_BOT_ID_AQUI",
+    clientId: "SEU_CLIENT_ID_AQUI",
+    botName: "Chat Diabetes T1",
+    hideWidget: false,
+    disableAnimations: false,
+  });
+</script>
+
 </body>
 </html>
