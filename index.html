@@ -314,6 +314,36 @@
         }
 
     </script>
+        // Função para realizar fetch com retentativas (exponential backoff)
+        async function fetchWithRetry(url, options, retries = 3) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        if (response.status >= 500) {
+                             throw new Error(`Server error: ${response.status}`);
+                        }
+                        return response;
+                    }
+                    return response;
+                } catch (error) {
+                    if (i < retries - 1) {
+                        const delay = Math.pow(2, i) * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 🔥 BOTPRESS WEBCHAT (inserido aqui) -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/11/20/12/20251120125507-2707BTZH.js" defer></script>
+
+</body>
+</html>
 
 </body>
 </html>
