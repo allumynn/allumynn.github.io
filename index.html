@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guia de Letramento em Diabetes Tipo 1</title>
-    <!-- Carrega o Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Estilo da fonte Inter */
@@ -40,7 +39,6 @@
 
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Barra de Navegação Fixa -->
     <header class="bg-white shadow-xl sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-extrabold text-sky-600 hover:text-cyan-700 transition duration-150">DT1 Guia</a>
@@ -49,14 +47,12 @@
                 <a href="#recursos" class="text-gray-600 hover:text-cyan-500 font-medium transition duration-150">Recursos</a>
                 <a href="#chat-area" class="text-gray-600 hover:text-cyan-500 font-medium transition duration-150">Chat</a>
             </div>
-            <!-- Ícone de Menu para Mobile (apenas visual) -->
             <button class="md:hidden text-gray-600 hover:text-cyan-500 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
             </button>
         </nav>
     </header>
 
-    <!-- HERO E INTRODUÇÃO -->
     <div class="hero-bg h-[85vh] flex items-center justify-center p-4">
         <div class="hero-content text-white text-center max-w-4xl rounded-3xl p-6 md:p-10 backdrop-blur-sm bg-black/10">
             <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight drop-shadow-2xl">
@@ -71,7 +67,6 @@
         </div>
     </div>
 
-    <!-- SEÇÃO SOBRE -->
     <section id="sobre" class="max-w-5xl mx-auto py-16 px-4">
         <h2 class="text-4xl font-extrabold text-center mb-12 text-sky-700">📚 Educação e Segurança em Primeiro Lugar</h2>
         <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -79,7 +74,6 @@
         </p>
 
         <div class="grid md:grid-cols-2 gap-10">
-            <!-- Bloco 1: O que NÃO faz (Alerta Vermelho/Urgência) -->
             <div class="bg-white p-8 rounded-3xl shadow-2xl border-l-4 border-red-500 hover:shadow-red-300/50 transition duration-300">
                 <h3 class="text-2xl font-bold mb-3 text-red-600 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 mr-3"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
@@ -91,7 +85,6 @@
                 </p>
             </div>
 
-            <!-- Bloco 2: O que faz (Informação Sky/Cyan) -->
             <div class="bg-white p-8 rounded-3xl shadow-2xl border-l-4 border-cyan-500 hover:shadow-cyan-300/50 transition duration-300">
                 <h3 class="text-2xl font-bold mb-3 text-cyan-600 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 mr-3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -105,7 +98,6 @@
         </div>
     </section>
     
-    <!-- SEÇÃO DE RECURSOS CHAVE (Fundo de cor secundária) -->
     <section id="recursos" class="max-w-5xl mx-auto py-16 px-4 bg-cyan-50 rounded-3xl shadow-inner my-12">
         <h2 class="text-4xl font-extrabold text-center mb-10 text-cyan-700">💡 Explore Tópicos Essenciais</h2>
         <p class="text-xl text-center text-gray-700 mb-12 max-w-3xl mx-auto">
@@ -113,7 +105,6 @@
         </p>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Cartões -->
             <div class="p-6 border border-cyan-300 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <span class="text-5xl mb-3 block text-center">🍚</span>
                 <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Contagem de Carboidratos</h3>
@@ -137,24 +128,16 @@
         </div>
     </section>
 
-    <!-- SEÇÃO CHAT (conteúdo estático; Botpress aparecerá como widget flutuante) -->
     <section id="chat-area" class="bg-gray-100 py-16 px-4">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-4xl font-extrabold text-center mb-8 text-sky-700">💬 Seu Chat Educativo</h2>
 
             <div id="chat-window" class="bg-white h-96 overflow-y-auto p-4 rounded-t-2xl shadow-2xl mb-4 flex flex-col space-y-4">
-                <div class="flex justify-start">
-                    <div class="bg-cyan-200 p-3 rounded-xl max-w-xs md:max-w-md shadow-lg border border-cyan-300">
-                        <p class="text-sm font-bold text-cyan-900 mb-1">Guia Educativo</p>
-                        <p class="text-gray-800">Olá! Eu sou seu Guia Educativo sobre Diabetes Tipo 1. Estou aqui para explicar conceitos de forma simples e segura. Lembre-se: <strong>Eu não sou médico e não dou conselhos sobre tratamento, dosagem de insulina ou emergências.</strong></p>
-                    </div>
                 </div>
-            </div>
 
-            <!-- Formulário de Input (fallback - não conecta mais ao Gemini) -->
             <div class="flex space-x-3">
-                <input type="text" id="user-input" placeholder="Pergunte sobre conceitos, termos, mitos..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-300 transition duration-150 shadow-inner" disabled>
-                <button id="send-btn" class="bg-gradient-to-br from-sky-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-200 disabled:opacity-50 hover:shadow-xl" disabled>
+                <input type="text" id="user-input" placeholder="Pergunte sobre conceitos, termos, mitos..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-300 transition duration-150 shadow-inner">
+                <button id="send-btn" class="bg-gradient-to-br from-sky-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-200 hover:shadow-xl">
                     Enviar
                 </button>
             </div>
@@ -165,33 +148,114 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="text-center py-8 bg-gray-200 mt-12 text-gray-600 text-sm">
         © 2025 — Projeto de Letramento em Diabetes Tipo 1.
     </footer>
 
-    <!-- BOTPRESS WEBCHAT -->
-    <!-- ordem: inject.js primeiro, depois sua config personalizada -->
     <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2025/11/20/12/20251120125507-2707BTZH.js"></script>
 
-    <!-- Pequeno helper: abre o webchat quando o usuário clica no botão "Começar" -->
     <script>
-      document.getElementById('open-chat-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        try {
-          if (window.botpressWebChat) {
-            // Se a API do Botpress estiver pronta, abre o widget
-            window.botpressWebChat.open();
-          } else {
-            // fallback: rola até a seção de chat
-            document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
-          }
-        } catch (err) {
-          console.warn('Botpress não inicializado ainda:', err);
-          document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
+        const chatWindow = document.getElementById('chat-window');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        /**
+         * Adiciona uma mensagem ao chat.
+         * @param {string} text - O conteúdo da mensagem.
+         * @param {boolean} isBot - Se a mensagem é do Bot (true) ou do Usuário (false).
+         */
+        function displayMessage(text, isBot) {
+            const messageWrapper = document.createElement('div');
+            messageWrapper.className = isBot ? 'flex justify-start' : 'flex justify-end';
+
+            const messageBubble = document.createElement('div');
+            // Estilos diferentes para Bot e Usuário
+            if (isBot) {
+                messageBubble.className = 'bg-cyan-200 p-3 rounded-xl max-w-xs md:max-w-md shadow-lg border border-cyan-300';
+            } else {
+                messageBubble.className = 'bg-sky-500 text-white p-3 rounded-xl max-w-xs md:max-w-md shadow-lg';
+            }
+            
+            // Adiciona nome do emissor (somente para o bot)
+            if (isBot) {
+                const senderName = document.createElement('p');
+                senderName.className = 'text-sm font-bold text-cyan-900 mb-1';
+                senderName.textContent = 'Guia Educativo';
+                messageBubble.appendChild(senderName);
+            }
+
+            const messageText = document.createElement('p');
+            messageText.className = isBot ? 'text-gray-800' : 'text-white';
+            messageText.innerHTML = text; // Usa innerHTML para processar a tag <strong>
+            messageBubble.appendChild(messageText);
+
+            messageWrapper.appendChild(messageBubble);
+            chatWindow.appendChild(messageWrapper);
+
+            // Rola automaticamente para a última mensagem
+            chatWindow.scrollTop = chatWindow.scrollHeight;
         }
-      });
+        
+        // Função para simular o envio de mensagem
+        function handleSendMessage() {
+            const text = userInput.value.trim();
+            if (text === '') return;
+
+            // 1. Exibe a mensagem do usuário
+            displayMessage(text, false); 
+            userInput.value = ''; // Limpa o input
+            userInput.focus();
+
+            // 2. Simula o processamento (Loading)
+            loadingIndicator.classList.remove('hidden');
+            sendBtn.disabled = true;
+
+            // 3. Simula uma resposta do Bot (após 1.5 segundos)
+            setTimeout(() => {
+                loadingIndicator.classList.add('hidden');
+                sendBtn.disabled = false;
+                
+                // Mensagem Simples de Confirmação (apenas simulação)
+                displayMessage('Obrigado pela sua pergunta! Lembre-se que o chat real está no widget flutuante do Botpress.', true);
+
+            }, 1500);
+        }
+
+        // --- Event Listeners ---
+        
+        // Evento de clique no botão 'Enviar'
+        sendBtn.addEventListener('click', handleSendMessage);
+
+        // Evento de tecla 'Enter' no campo de input
+        userInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' && !sendBtn.disabled) {
+                handleSendMessage();
+            }
+        });
+
+        // --- Inicialização: Mensagem Inicial do Bot ---
+        document.addEventListener('DOMContentLoaded', () => {
+             // Mensagem de Boas-Vindas DINÂMICA
+            const welcomeMsg = `Olá! Eu sou seu Guia Educativo sobre Diabetes Tipo 1. Estou aqui para explicar conceitos de forma simples e segura. Lembre-se: <strong>Eu não sou médico e não dou conselhos sobre tratamento, dosagem de insulina ou emergências.</strong>`;
+            displayMessage(welcomeMsg, true);
+        });
+
+        // Pequeno helper: abre o webchat quando o usuário clica no botão "Começar"
+        document.getElementById('open-chat-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            try {
+                if (window.botpressWebChat) {
+                    window.botpressWebChat.open();
+                } else {
+                    document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
+                }
+            } catch (err) {
+                console.warn('Botpress não inicializado ainda:', err);
+                document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     </script>
 
 </body>
