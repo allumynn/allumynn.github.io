@@ -10,11 +10,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body { font-family: 'Inter', sans-serif; }
 
-        /* Estilo da barra de rolagem para o chat */
-        #chat-window::-webkit-scrollbar { width: 8px; }
-        #chat-window::-webkit-scrollbar-thumb { background-color: #06b6d4; border-radius: 10px; } /* cyan-500 */
-        #chat-window::-webkit-scrollbar-track { background-color: #f1f5f9; }
-
         /* Estilo para a imagem de fundo com overlay */
         .hero-bg {
             /* Imagem focada em autocuidado/monitoramento */
@@ -45,8 +40,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#sobre" class="text-gray-600 hover:text-cyan-500 font-medium transition duration-150">Sobre</a>
                 <a href="#recursos" class="text-gray-600 hover:text-cyan-500 font-medium transition duration-150">Recursos</a>
-                <a href="#chat-area" class="text-gray-600 hover:text-cyan-500 font-medium transition duration-150">Chat</a>
-            </div>
+                </div>
             <button class="md:hidden text-gray-600 hover:text-cyan-500 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
             </button>
@@ -128,26 +122,6 @@
         </div>
     </section>
 
-    <section id="chat-area" class="bg-gray-100 py-16 px-4">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-center mb-8 text-sky-700">💬 Seu Chat Educativo</h2>
-
-            <div id="chat-window" class="bg-white h-96 overflow-y-auto p-4 rounded-t-2xl shadow-2xl mb-4 flex flex-col space-y-4">
-                </div>
-
-            <div class="flex space-x-3">
-                <input type="text" id="user-input" placeholder="Pergunte sobre conceitos, termos, mitos..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-300 transition duration-150 shadow-inner">
-                <button id="send-btn" class="bg-gradient-to-br from-sky-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-200 hover:shadow-xl">
-                    Enviar
-                </button>
-            </div>
-
-            <div id="loading-indicator" class="mt-3 text-center text-sm text-cyan-600 hidden">
-                Aguarde, processando sua pergunta com cuidado...
-            </div>
-        </div>
-    </section>
-
     <footer class="text-center py-8 bg-gray-200 mt-12 text-gray-600 text-sm">
         © 2025 — Projeto de Letramento em Diabetes Tipo 1.
     </footer>
@@ -156,104 +130,15 @@
     <script src="https://files.bpcontent.cloud/2025/11/20/12/20251120125507-2707BTZH.js"></script>
 
     <script>
-        const chatWindow = document.getElementById('chat-window');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-        const loadingIndicator = document.getElementById('loading-indicator');
-
-        /**
-         * Adiciona uma mensagem ao chat.
-         * @param {string} text - O conteúdo da mensagem.
-         * @param {boolean} isBot - Se a mensagem é do Bot (true) ou do Usuário (false).
-         */
-        function displayMessage(text, isBot) {
-            const messageWrapper = document.createElement('div');
-            messageWrapper.className = isBot ? 'flex justify-start' : 'flex justify-end';
-
-            const messageBubble = document.createElement('div');
-            // Estilos diferentes para Bot e Usuário
-            if (isBot) {
-                messageBubble.className = 'bg-cyan-200 p-3 rounded-xl max-w-xs md:max-w-md shadow-lg border border-cyan-300';
-            } else {
-                messageBubble.className = 'bg-sky-500 text-white p-3 rounded-xl max-w-xs md:max-w-md shadow-lg';
-            }
-            
-            // Adiciona nome do emissor (somente para o bot)
-            if (isBot) {
-                const senderName = document.createElement('p');
-                senderName.className = 'text-sm font-bold text-cyan-900 mb-1';
-                senderName.textContent = 'Guia Educativo';
-                messageBubble.appendChild(senderName);
-            }
-
-            const messageText = document.createElement('p');
-            messageText.className = isBot ? 'text-gray-800' : 'text-white';
-            messageText.innerHTML = text; // Usa innerHTML para processar a tag <strong>
-            messageBubble.appendChild(messageText);
-
-            messageWrapper.appendChild(messageBubble);
-            chatWindow.appendChild(messageWrapper);
-
-            // Rola automaticamente para a última mensagem
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-        
-        // Função para simular o envio de mensagem
-        function handleSendMessage() {
-            const text = userInput.value.trim();
-            if (text === '') return;
-
-            // 1. Exibe a mensagem do usuário
-            displayMessage(text, false); 
-            userInput.value = ''; // Limpa o input
-            userInput.focus();
-
-            // 2. Simula o processamento (Loading)
-            loadingIndicator.classList.remove('hidden');
-            sendBtn.disabled = true;
-
-            // 3. Simula uma resposta do Bot (após 1.5 segundos)
-            setTimeout(() => {
-                loadingIndicator.classList.add('hidden');
-                sendBtn.disabled = false;
-                
-                // Mensagem Simples de Confirmação (apenas simulação)
-                displayMessage('Obrigado pela sua pergunta! Lembre-se que o chat real está no widget flutuante do Botpress.', true);
-
-            }, 1500);
-        }
-
-        // --- Event Listeners ---
-        
-        // Evento de clique no botão 'Enviar'
-        sendBtn.addEventListener('click', handleSendMessage);
-
-        // Evento de tecla 'Enter' no campo de input
-        userInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter' && !sendBtn.disabled) {
-                handleSendMessage();
-            }
-        });
-
-        // --- Inicialização: Mensagem Inicial do Bot ---
-        document.addEventListener('DOMContentLoaded', () => {
-             // Mensagem de Boas-Vindas DINÂMICA
-            const welcomeMsg = `Olá! Eu sou seu Guia Educativo sobre Diabetes Tipo 1. Estou aqui para explicar conceitos de forma simples e segura. Lembre-se: <strong>Eu não sou médico e não dou conselhos sobre tratamento, dosagem de insulina ou emergências.</strong>`;
-            displayMessage(welcomeMsg, true);
-        });
-
-        // Pequeno helper: abre o webchat quando o usuário clica no botão "Começar"
         document.getElementById('open-chat-btn').addEventListener('click', function(e) {
             e.preventDefault();
             try {
+                // Tenta abrir o widget flutuante do Botpress
                 if (window.botpressWebChat) {
                     window.botpressWebChat.open();
-                } else {
-                    document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
-                }
+                } 
             } catch (err) {
-                console.warn('Botpress não inicializado ainda:', err);
-                document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
+                console.warn('Erro ao tentar abrir Botpress:', err);
             }
         });
     </script>
