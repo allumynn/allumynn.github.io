@@ -65,7 +65,7 @@
             <p class="text-xl sm:text-2xl font-light mb-10 drop-shadow-xl">
                 Um espaço seguro, informativo e pensado para adolescentes que buscam mais autonomia no dia a dia.
             </p>
-            <a href="#chat-area" class="inline-block bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white text-xl font-bold py-3 px-10 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 active:scale-95">
+            <a href="#chat-area" id="open-chat-btn" class="inline-block bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white text-xl font-bold py-3 px-10 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 active:scale-95">
                 Começar a Aprender Agora! ✨
             </a>
         </div>
@@ -86,8 +86,8 @@
                     Atenção: Não Sou Médico!
                 </h3>
                 <p class="text-base text-gray-700">
-                    O Guia **NÃO** pode: diagnosticar, ajustar dosagem de insulina (incluindo cálculo de fator ou proporção), prescrever tratamento, ou lidar com emergências.
-                    **Segurança é prioridade:** Para qualquer dúvida sobre tratamento ou se sentir mal, você deve procurar imediatamente seu médico ou equipe de saúde.
+                    O Guia <strong>NÃO</strong> pode: diagnosticar, ajustar dosagem de insulina (incluindo cálculo de fator ou proporção), prescrever tratamento, ou lidar com emergências.
+                    <strong>Segurança é prioridade:</strong> Para qualquer dúvida sobre tratamento ou se sentir mal, você deve procurar imediatamente seu médico ou equipe de saúde.
                 </p>
             </div>
 
@@ -113,236 +113,86 @@
         </p>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Cartão 1: Carboidratos -->
+            <!-- Cartões -->
             <div class="p-6 border border-cyan-300 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <span class="text-5xl mb-3 block text-center">🍚</span>
                 <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Contagem de Carboidratos</h3>
-                <p class="text-sm text-gray-600 text-center">Entenda como calcular e estimar de forma eficaz para suas refeições.</p>
+                <p class="text-sm text-gray-600 text-center">Entenda como estimar de forma eficaz para suas refeições.</p>
             </div>
-
-            <!-- Cartão 2: Exercício -->
             <div class="p-6 border border-cyan-300 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <span class="text-5xl mb-3 block text-center">⚽</span>
                 <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Atividade Física e Glicemia</h3>
                 <p class="text-sm text-gray-600 text-center">Dicas de planejamento para esportes e exercícios com segurança.</p>
             </div>
-
-            <!-- Cartão 3: Cetonas -->
             <div class="p-6 border border-cyan-300 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <span class="text-5xl mb-3 block text-center">🔬</span>
-                <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Cetonas: O que Saber?</h3>
-                <p class="text-sm text-gray-600 text-center">Explicação do que são, quando medir e a importância da Cetoacidose (CAD).</p>
+                <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Cetonas</h3>
+                <p class="text-sm text-gray-600 text-center">O que são, quando medir e a importância da CAD.</p>
             </div>
-            
-            <!-- Cartão 4: Hipo e Hiper -->
             <div class="p-6 border border-cyan-300 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <span class="text-5xl mb-3 block text-center">📉</span>
                 <h3 class="text-lg font-bold mb-2 text-sky-800 text-center">Hipoglicemia vs. Hiper</h3>
-                <p class="text-sm text-gray-600 text-center">Aprenda a reconhecer os sintomas e prevenir desvios com informação.</p>
+                <p class="text-sm text-gray-600 text-center">Reconhecer sintomas e prevenir desvios com informação.</p>
             </div>
-            
         </div>
     </section>
 
-    <!-- SEÇÃO CHAT -->
+    <!-- SEÇÃO CHAT (conteúdo estático; Botpress aparecerá como widget flutuante) -->
     <section id="chat-area" class="bg-gray-100 py-16 px-4">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-4xl font-extrabold text-center mb-8 text-sky-700">💬 Seu Chat Educativo</h2>
-            
-            <!-- Janela de Chat -->
+
             <div id="chat-window" class="bg-white h-96 overflow-y-auto p-4 rounded-t-2xl shadow-2xl mb-4 flex flex-col space-y-4">
-                <!-- Mensagem de Boas-Vindas (Sistema) -->
                 <div class="flex justify-start">
                     <div class="bg-cyan-200 p-3 rounded-xl max-w-xs md:max-w-md shadow-lg border border-cyan-300">
                         <p class="text-sm font-bold text-cyan-900 mb-1">Guia Educativo</p>
-                        <p class="text-gray-800">Olá! Eu sou seu Guia Educativo sobre Diabetes Tipo 1. Estou aqui para explicar conceitos de forma simples e segura. Lembre-se: **Eu não sou médico e não dou conselhos sobre tratamento, dosagem de insulina ou emergências.** Qual conceito sobre DT1 você gostaria de entender melhor hoje?</p>
+                        <p class="text-gray-800">Olá! Eu sou seu Guia Educativo sobre Diabetes Tipo 1. Estou aqui para explicar conceitos de forma simples e segura. Lembre-se: <strong>Eu não sou médico e não dou conselhos sobre tratamento, dosagem de insulina ou emergências.</strong></p>
                     </div>
                 </div>
             </div>
 
-            <!-- Formulário de Input -->
+            <!-- Formulário de Input (fallback - não conecta mais ao Gemini) -->
             <div class="flex space-x-3">
-                <input type="text" id="user-input" placeholder="Pergunte sobre conceitos, termos, mitos..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-300 transition duration-150 shadow-inner">
-                <button id="send-btn" onclick="sendMessage()" class="bg-gradient-to-br from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-200 disabled:opacity-50 hover:shadow-xl" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <input type="text" id="user-input" placeholder="Pergunte sobre conceitos, termos, mitos..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-300 transition duration-150 shadow-inner" disabled>
+                <button id="send-btn" class="bg-gradient-to-br from-sky-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-200 disabled:opacity-50 hover:shadow-xl" disabled>
+                    Enviar
                 </button>
             </div>
-            
-            <!-- Indicador de Carregamento -->
+
             <div id="loading-indicator" class="mt-3 text-center text-sm text-cyan-600 hidden">
                 Aguarde, processando sua pergunta com cuidado...
             </div>
         </div>
     </section>
-    
+
     <!-- FOOTER -->
     <footer class="text-center py-8 bg-gray-200 mt-12 text-gray-600 text-sm">
         © 2025 — Projeto de Letramento em Diabetes Tipo 1.
-        <br>Desenvolvido com o Gemini API.
     </footer>
 
-    <!-- JAVASCRIPT: Lógica do Chat e API Gemini -->
+    <!-- BOTPRESS WEBCHAT -->
+    <!-- ordem: inject.js primeiro, depois sua config personalizada -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/11/20/12/20251120125507-2707BTZH.js"></script>
+
+    <!-- Pequeno helper: abre o webchat quando o usuário clica no botão "Começar" -->
     <script>
-        const API_KEY = ""; // Chave da API (será preenchida pelo ambiente)
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
-
-        const chatWindow = document.getElementById('chat-window');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-        const loadingIndicator = document.getElementById('loading-indicator');
-
-        // Habilita o botão apenas se houver texto
-        userInput.addEventListener('input', () => {
-            sendBtn.disabled = userInput.value.trim() === '';
-        });
-        
-        // Permite enviar com a tecla Enter
-        function handleKeyPress(event) {
-            if (event.key === 'Enter' && !sendBtn.disabled) {
-                sendMessage();
-            }
+      document.getElementById('open-chat-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        try {
+          if (window.botpressWebChat) {
+            // Se a API do Botpress estiver pronta, abre o widget
+            window.botpressWebChat.open();
+          } else {
+            // fallback: rola até a seção de chat
+            document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
+          }
+        } catch (err) {
+          console.warn('Botpress não inicializado ainda:', err);
+          document.getElementById('chat-area').scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Função para adicionar uma mensagem à janela de chat
-        function addMessage(text, isUser) {
-            const messageContainer = document.createElement('div');
-            messageContainer.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
-
-            const messageBubble = document.createElement('div');
-            messageBubble.className = `p-3 rounded-xl shadow-lg max-w-[85%] md:max-w-[70%] text-base ${
-                isUser 
-                ? 'bg-sky-500 text-white rounded-br-none' 
-                : 'bg-cyan-200 text-gray-800 rounded-tl-none border border-cyan-300'
-            }`;
-            
-            if (!isUser) {
-                // Adiciona o cabeçalho para a mensagem do Guia
-                const header = document.createElement('p');
-                header.className = 'text-sm font-bold text-cyan-800 mb-1';
-                header.textContent = 'Guia Educativo';
-                messageBubble.appendChild(header);
-            }
-
-            const messageText = document.createElement('p');
-            messageText.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Formata negrito do Markdown
-            messageBubble.appendChild(messageText);
-            
-            messageContainer.appendChild(messageBubble);
-            chatWindow.appendChild(messageContainer);
-
-            // Rola para a última mensagem
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-
-        // Função principal para enviar a mensagem
-        async function sendMessage() {
-            const query = userInput.value.trim();
-            if (!query) return;
-
-            // 1. Adiciona a mensagem do usuário ao chat
-            addMessage(query, true);
-            userInput.value = '';
-            sendBtn.disabled = true;
-            loadingIndicator.classList.remove('hidden');
-
-            try {
-                // 2. Chama a API Gemini com instruções de segurança
-                const systemPrompt = `
-                    Você é um Guia Educativo amigável e informativo sobre Diabetes Tipo 1 (DT1), focado em adolescentes.
-                    Sua função é fornecer APENAS informações educativas, baseadas em conceitos e boas práticas gerais.
-                    
-                    REGRAS RÍGIDAS (NÃO NEGOCIÁVEIS):
-                    1. JAMAIS forneça conselhos médicos, diagnóstico, tratamento, ajuste de dosagem de insulina, recomendações sobre medicamentos ou informações sobre valores de glicemia específicos.
-                    2. Se a pergunta for sobre DOSAGEM, EMERGÊNCIA, VALORES PESSOAIS, ou TRATAMENTO MÉDICO, responda de forma firme: "Eu sou apenas um Guia Educativo e não posso dar conselhos médicos. Para questões de tratamento ou emergência, por favor, consulte um profissional de saúde."
-                    3. Seja conciso, use linguagem simples (adequada para adolescentes) e sempre lembre que seu objetivo é o letramento e a autonomia segura.
-                    4. Use o Português do Brasil.
-                `;
-
-                const payload = {
-                    contents: [{ parts: [{ text: query }] }],
-                    tools: [{ "google_search": {} }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                };
-
-                const response = await fetchWithRetry(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Desculpe, não consegui processar sua solicitação no momento. Tente novamente.";
-
-                // 3. Adiciona a resposta do bot
-                addMessage(text, false);
-
-            } catch (error) {
-                console.error("Erro na chamada da API Gemini:", error);
-                addMessage("Ocorreu um erro ao tentar obter a resposta. Verifique sua conexão e tente novamente.", false);
-            } finally {
-                loadingIndicator.classList.add('hidden');
-                sendBtn.disabled = userInput.value.trim() === ''; // Reabilita se houver texto
-            }
-        }
-        
-        // Função para realizar fetch com retentativas (exponential backoff)
-        async function fetchWithRetry(url, options, retries = 3) {
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (!response.ok) {
-                        // Lança um erro para forçar a retentativa (exceto se for 4xx que pode ser erro de input)
-                        if (response.status >= 500) {
-                             throw new Error(`Server error: ${response.status}`);
-                        }
-                        // Para 4xx, retorna a resposta para ser tratada como erro de conteúdo/payload.
-                        return response;
-                    }
-                    return response;
-                } catch (error) {
-                    if (i < retries - 1) {
-                        const delay = Math.pow(2, i) * 1000; // 1s, 2s, 4s...
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    } else {
-                        throw error;
-                    }
-                }
-            }
-        }
-
+      });
     </script>
-        // Função para realizar fetch com retentativas (exponential backoff)
-        async function fetchWithRetry(url, options, retries = 3) {
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (!response.ok) {
-                        if (response.status >= 500) {
-                             throw new Error(`Server error: ${response.status}`);
-                        }
-                        return response;
-                    }
-                    return response;
-                } catch (error) {
-                    if (i < retries - 1) {
-                        const delay = Math.pow(2, i) * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    } else {
-                        throw error;
-                    }
-                }
-            }
-        }
-    </script>
-
-    </script>
-
-    <!-- 🔥 BOTPRESS WEBCHAT -->
-    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
-    <script src="https://files.bpcontent.cloud/2025/11/20/12/20251120125507-2707BTZH.js" defer></script>
 
 </body>
 </html>
